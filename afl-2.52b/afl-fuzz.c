@@ -82,11 +82,11 @@
 /// empirical study
 
 EXP_ST u64 total_time = 500; // total time for running afl
-EXP_ST u64 diff_branche = 10; // time unit for branch coverage
+EXP_ST u64 diff_branch = 10; // time unit for branch coverage
 EXP_ST u64 last_branch = 0; // last recorded time for branch coverage
 EXP_ST u64 diff_cov = 10; // time unit for branch test case number
 EXP_ST u64 last_cov = 0; // last recorded time for branch test case number
-eXP_ST u32 branch_cov[MAP_SIZE]; // map form branch_id to test case number
+EXP_ST u32 branch_cov[MAP_SIZE]; // map form branch_id to test case number
 EXP_ST u32 branches; // number of covered branches
 
 
