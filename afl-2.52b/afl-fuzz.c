@@ -80,12 +80,12 @@
    really makes no sense to haul them around as function parameters. */
 
 /// empirical study
-EXP_ST u64 diff_branche = 10;
-EXP_ST u64 last_branch = 0;
-EXP_ST u64 diff_cov = 10;
-EXP_ST u64 last_cov = 0;
-EXP_ST u32 branch_cov[MAP_SIZE];
-EXP_ST u32 branches;
+EXP_ST u64 diff_branche = 10; // time unit for branch coverage
+EXP_ST u64 last_branch = 0; // last recorded time for branch coverage
+EXP_ST u64 diff_cov = 10; // time unit for branch test case number
+EXP_ST u64 last_cov = 0; // last recorded time for branch test case number
+eXP_ST u32 branch_cov[MAP_SIZE]; // map form branch_id to test case number
+EXP_ST u32 branches; // number of covered branches
 
 
 EXP_ST u8 *in_dir,                    /* Input directory with test cases  */
