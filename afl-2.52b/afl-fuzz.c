@@ -80,6 +80,8 @@
    really makes no sense to haul them around as function parameters. */
 
 /// empirical study
+
+EXP_ST u64 total_time = 500; // total time for running afl
 EXP_ST u64 diff_branche = 10; // time unit for branch coverage
 EXP_ST u64 last_branch = 0; // last recorded time for branch coverage
 EXP_ST u64 diff_cov = 10; // time unit for branch test case number
@@ -1099,13 +1101,16 @@ static inline u8 has_new_bits_emp(u8* virgin_map) {
 
   /// empirical study: collect information
   u64 cur_time = get_cur_time();  
-  if((cur_time - last_branch) > diff_branche){
-    printf("output the number of test case for each branch!\n");
+  if((cur_time - last_branch) > diff_branch){
+    printf("output the number of covered branches!\n");
     last_branch = cur_time;
   }
   if(cur_time - last_cov > diff_cov){
-    printf("output the number of covered branches!\n");
+    printf("output the number of test case for each branch!\n");
     last_cov = cur_time;
+  }
+  if(cur_time - start_time > total_time){
+    exit(0);
   }
   
   return ret;
