@@ -1,10 +1,10 @@
-afl-analyze
-afl-as
-afl-fuzz
-afl-gcc
-afl-gotcpu
-afl-showmap
-aft-tmin
+/afl-analyze
+/afl-as
+/afl-fuzz
+/afl-gcc
+/afl-gotcpu
+/afl-showmap
+/aft-tmin
 input/
 output/
 a.out
